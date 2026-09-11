@@ -1,0 +1,49 @@
+#include <stdio.h>
+#include "fila.h"
+
+void criarFila(Fila *f) {
+    f->inicio = 0;
+    f->fim = 0;
+    f->qtd = 0;
+}
+
+int filaCheia(Fila *f) {
+    return f->qtd == TAM_FILA;
+}
+
+int filaVazia(Fila *f) {
+    return f->qtd == 0;
+}
+
+int enfileirar(Fila *f, int valor) {
+    if (filaCheia(f)) {
+        printf("[Fila] Erro: fila cheia, nao foi possivel inserir %d\n", valor);
+        return 0;
+    }
+    f->dados[f->fim] = valor;
+    f->fim = (f->fim + 1) % TAM_FILA;
+    f->qtd++;
+    return 1;
+}
+
+int desenfileirar(Fila *f, int *valor) {
+    if (filaVazia(f)) {
+        printf("[Fila] Erro: fila vazia, nao ha o que remover\n");
+        return 0;
+    }
+    *valor = f->dados[f->inicio];
+    f->inicio = (f->inicio + 1) % TAM_FILA;
+    f->qtd--;
+    return 1;
+}
+
+void imprimirFila(Fila *f) {
+    printf("Fila (inicio -> fim): [");
+    int idx = f->inicio;
+    for (int i = 0; i < f->qtd; i++) {
+        printf("%d", f->dados[idx]);
+        if (i < f->qtd - 1) printf(", ");
+        idx = (idx + 1) % TAM_FILA;
+    }
+    printf("]\n");
+}
