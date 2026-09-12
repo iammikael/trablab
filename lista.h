@@ -15,5 +15,5 @@ int inserirLista(Lista *l, int valor);
 int removerLista(Lista *l, int valor);
 int buscarLista(Lista *l, int valor);
 void ordenarLista(Lista *l);
-
+void imprimirLista(Lista *l);
 #endif

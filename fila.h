@@ -15,5 +15,6 @@ int enfileirar(Fila *f, int valor);
 int desenfileirar(Fila *f, int *valor);
 int filaCheia(Fila *f);
 int filaVazia(Fila *f);
+void imprimirFila(Fila *f);
  
 #endif

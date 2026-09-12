@@ -1,7 +1,7 @@
 //Pilha Criacao, insercao(push), remocao(pop), cheia, vazia
 #include "pilha.h"
 #include <stdio.h>
-#define TAM 5;
+#define TAM 5 
 
 //criacao da pilha
 void criarPilha(Pilha *p) {
@@ -34,5 +34,12 @@ int pilhaVazia(Pilha *p) {
     return p->topo == -1;
 }
 
-
+void imprimirPilha(Pilha *p) {
+    printf("Pilha (base -> topo): [");
+    for (int i = 0; i <= p->topo; i++) {
+        printf("%d", p->dados[i]);
+        if (i < p->topo) printf(", ");
+    }
+    printf("]\n");
+}
 

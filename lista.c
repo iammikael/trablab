@@ -65,3 +65,11 @@ void ordenarLista(Lista *l) {
         }
     }
 }
+void imprimirLista(Lista *l) {
+    printf("Lista: [");
+    for (int i = 0; i < l->qtd; i++) {
+        printf("%d", l->dados[i]);
+        if (i < l->qtd - 1) printf(", ");
+    }
+    printf("]\n");
+}

@@ -46,5 +46,13 @@ int filaVazia(Fila *f){
     return f->quantidade == 0;
 }
 
-
-
+void imprimirFila(Fila *f) {
+    printf("Fila (inicio -> fim): [");
+    int idx = f->inicio;
+    for (int i = 0; i < f->quantidade; i++) {
+        printf("%d", f->dados[idx]);
+        if (i < f->quantidade - 1) printf(", ");
+        idx = (idx + 1) % TAM_FILA;
+    }
+    printf("]\n");
+}

@@ -13,5 +13,6 @@ int pilhaCheia(Pilha *p);
 int pilhaVazia(Pilha *p);
 int push(Pilha *p, int valor);
 int pop(Pilha *p, int *valor);
+void imprimirPilha(Pilha *p);
 
-#endiF
+#endif
