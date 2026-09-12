@@ -1,7 +1,5 @@
 //Fila Criacao, insercao(enfileirar), remocao(desenfileirar), cheia, vazia
 
-//Fila Criacao, insercao(enfileirar), remocao(desenfileirar), cheia, vazia
-
 #include "fila.h"
 #include <stdio.h>
 
